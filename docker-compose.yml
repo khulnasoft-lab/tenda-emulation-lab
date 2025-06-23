@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  tenda-firmware-lab:
+    build: .
+    container_name: tenda-firmware-lab
+    privileged: true
+    ports:
+      - "80:80"
+      - "9000:9000"
+      - "2222:22"
+    volumes:
+      - ./firmware_data:/home/user/firmware_data
+    stdin_open: true
+    tty: true
